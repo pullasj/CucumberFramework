@@ -32,6 +32,19 @@ public class shoppingCartPage {
 
     public static void validateProductTotalPrice(String expectedProductPrice, String expectedProductQuantity ){
         Integer expectedProductTotalPrice = Integer.parseInt(expectedProductPrice) * Integer.parseInt(expectedProductQuantity);
-        browserUtils.validateText(txtTotalPrice,expectedProductTotalPrice.toString());
+        int number = expectedProductTotalPrice;
+        int mod;
+        StringBuilder comm = new StringBuilder();
+        while (number > 0) {
+            mod = number % 1000;
+            number = number / 1000;
+            if (number > 0) {
+                comm.insert(0, String.format(",%03d", mod));
+            } else {
+                comm.insert(0, mod);
+            }
+        }
+        String Expected = "$"+ comm.toString() +".00";
+        browserUtils.validateText(txtTotalPrice,Expected);
     }
 }

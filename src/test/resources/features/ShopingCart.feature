@@ -14,4 +14,5 @@ Feature: User Login
       When User click on the add to cart button for the macbook product
       And User Click the Shopping Cart
       Then Macbook product is added to the shopping cart
+      And Removed from the cart
 
