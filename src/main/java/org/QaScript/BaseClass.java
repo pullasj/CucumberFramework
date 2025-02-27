@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.QaScript.Utils.PropertiesUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.Properties;
 
@@ -19,7 +20,14 @@ public class BaseClass {
         Properties properties1 = PropertiesUtil.loadFrameworkProperties();
         String browser = properties1.getProperty("browser.driver");
 
-        driver = getBrowserDriver(browser);
+//        For Headless browser
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        driver = new ChromeDriver(options);
+
+//        Uncomment this one for head browser comments above four lines
+//        driver = getBrowserDriver(browser);
         driver.get(url);
         driver.manage().window().maximize();
     }
