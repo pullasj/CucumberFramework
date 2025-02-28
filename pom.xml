@@ -1,68 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- Maven Project Object Model (POM) file for Cucumber Test Automation Framework -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- Group ID, Artifact ID, and Version for the project -->
   <groupId>org.QaScript</groupId>
   <artifactId>CucumberFramework</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+  <!-- Parent POM for dependency inheritance -->
   <parent>
     <groupId>at.stderr</groupId>
     <artifactId>maven-parent</artifactId>
     <version>2.3.0</version>
   </parent>
 
-
-
   <dependencies>
 
+    <!-- Cucumber Java Dependency for writing BDD tests -->
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
       <version>6.10.4</version>
     </dependency>
 
+    <!-- Cucumber JUnit Dependency for executing tests using JUnit -->
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit</artifactId>
       <version>6.10.4</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+    <!-- WebDriver Manager to manage browser drivers automatically -->
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
       <version>5.9.3</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <!-- Selenium Java Dependency for Web UI automation -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>4.29.0</version>
     </dependency>
 
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.poi/poi &ndash;&gt;-->
-<!--    <dependency>-->
-<!--      <groupId>org.apache.poi</groupId>-->
-<!--      <artifactId>poi</artifactId>-->
-<!--      <version>4.1.2</version>-->
-<!--    </dependency>-->
+    <!-- Apache POI Dependencies for handling Excel files (Commented Out) -->
+    <!-- Uncomment these dependencies if working with Excel files -->
 
-<!--    <dependency>-->
-<!--      <groupId>org.apache.poi</groupId>-->
-<!--      <artifactId>poi-ooxml</artifactId>-->
-<!--      <version>4.1.2</version>-->
-<!--    </dependency>-->
+    <!-- Apache POI for reading/writing Microsoft Office documents -->
+    <!--
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+    -->
 
   </dependencies>
-
-
-
-
-
-
 
 </project>
